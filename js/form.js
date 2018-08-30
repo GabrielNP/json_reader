@@ -8,7 +8,6 @@ botaoAdicionar.addEventListener("click", function(event){
     var pacienteTr = montaTr(paciente);
 
     var erros = validaPaciente(paciente);
-    console.log(erros);
     if (erros.length > 0) {
         exibeMensagensDeErro(erros);
         return;
@@ -76,8 +75,11 @@ function montaTd(dado, classe){
 function validaPaciente(paciente){
 
     var erros = [];
+    
 
     if (!validaPeso(paciente.peso))erros.push("O peso é inválido");
 
     if(!validaAltura(paciente.altura)) erros.push("A altura é inválida");
+
+    return erros;
 }
