@@ -1,6 +1,6 @@
 /* Como alterar o valor texto de um HTML? */  
     var titulo = document.querySelector(".titulo");
-    titulo.textContent = "Aparecida Nutricionista";
+    titulo.textContent = "Web Nutrição";
  
 var pacientes = document.querySelectorAll(".paciente");
 
