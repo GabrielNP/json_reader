@@ -17,8 +17,13 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
-				<label for="filtrar-tabela">Buscar:</label>
-				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				<div>
+					<label for="filtrar-tabela">Buscar:</label>
+					<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+					<label class="label-integrar-pacientes" for="integrar-pacientes">API:</label>
+					<button class="bto-integrar-pacientes" id="integrar-pacientes" class="botao bto-principal">Integrar pacientes</button>
+				</div>
+				<br><br><br>
 				<ul  id="mensagens-erro">					
 				</ul>
 				<br>
@@ -107,5 +112,6 @@
 		<script src="js/form.js"></script>
 		<script src="js/remover-paciente.js"></script>
 		<script src="js/filtra.js"></script>
+		<script src="js/api-pacientes.js"></script>
 	</body>
 </html>
