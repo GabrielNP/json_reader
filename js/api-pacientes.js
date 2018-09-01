@@ -5,7 +5,7 @@ botaoIntegrar.addEventListener("click", function(){
 
     xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes"); // método que especifica o tipo de requição e para onde
 
-    xhr.addEventListener("load", function(){
+    xhr.addEventListener("load", function(){  // evento load diz quando a resposta da requisição já foi carregada
         var resposta = xhr.responseText;
         var pacientes = JSON.parse(resposta);
 
@@ -13,7 +13,7 @@ botaoIntegrar.addEventListener("click", function(){
             adicionaPacienteNaTabela(paciente);
         });
 
-    }); // evento load diz quando a resposta da requisição já foi carregada
+    });
 
     xhr.send(); // método que envia a requisição
 });
