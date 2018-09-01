@@ -6,13 +6,21 @@ botaoIntegrar.addEventListener("click", function(){
     xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes"); // método que especifica o tipo de requição e para onde
 
     xhr.addEventListener("load", function(){  // evento load diz quando a resposta da requisição já foi carregada
-        var resposta = xhr.responseText;
-        var pacientes = JSON.parse(resposta);
-
-        pacientes.forEach(function(paciente){
-            adicionaPacienteNaTabela(paciente);
-        });
-
+    var erroAjax = document.querySelector("#erro-ajax");
+        if(xhr.status == 200){
+            var resposta = xhr.responseText;
+            var pacientes = JSON.parse(resposta);
+            erroAjax.classList.add("invisivel");
+            pacientes.forEach(function(paciente){
+                adicionaPacienteNaTabela(paciente);
+            });
+        }else{
+            console.log("Erro",xhr.status);
+            console.log(xhr.response);
+            erroAjax.classList.remove("invisivel");
+            erroAjax.classList.add("paciente-invalido");
+        }
+        
     });
 
     xhr.send(); // método que envia a requisição

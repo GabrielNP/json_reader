@@ -171,3 +171,7 @@ label div{
 	width: 120px;
 	
 }
+#erro-ajax{
+	font-size: 200%;
+	color: white;
+}
